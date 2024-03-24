@@ -6,8 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 // import { Configuration, OpenAIApi } from "openai";
 // import { OpenAIApi } from "openai";
-// import openai from "openai";
-import { Configuration, OpenAIApi } from "openai";
+import Openai from "openai";
+//import { Configuration, OpenAIApi } from "openai";
 import openAiRoutes from "./routes/openai.js";
 import authRoutes from "./routes/auth.js";
 
@@ -23,10 +23,15 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 /* OPEN AI CONFIGURATION */
-const configuration = new Configuration({
+// const configuration = new Configuration({
+//   apiKey: process.env.OPEN_API_KEY,
+// });
+// export const openai = new OpenAIApi(configuration);
+import OpenAI from 'openai';
+
+export const openai = new OpenAI({
   apiKey: process.env.OPEN_API_KEY,
 });
-export const openai = new OpenAIApi(configuration);
 
 
 
@@ -37,7 +42,7 @@ app.use("/auth", authRoutes);
 // server setup
 const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`app listening at http://localhost:${PORT}`);
 });
 
 
