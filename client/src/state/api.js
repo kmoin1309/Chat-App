@@ -26,20 +26,20 @@ export const api = createApi({
         body: payload,
       }),
     }),
-    postLogin: build.mutation({
-      query: (payload) => ({
-        url: "auth/login",
-        method: "POST",
-        body: payload,
-      }),
-    }),
-    postSignUp: build.mutation({
-      query: (payload) => ({
-        url: "auth/signup",
-        method: "POST",
-        body: payload,
-      }),
-    }),
+    // postLogin: build.mutation({
+    //   query: (payload) => ({
+    //     url: "auth/login",
+    //     method: "POST",
+    //     body: payload,
+    //   }),
+    // }),
+    // postSignUp: build.mutation({
+    //   query: (payload) => ({
+    //     url: "auth/signup",
+    //     method: "POST",
+    //     body: payload,
+    //   }),
+    // }),
   }),
 });
 

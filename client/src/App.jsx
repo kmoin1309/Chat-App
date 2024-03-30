@@ -15,27 +15,32 @@ function App() {
           <Route
             path="/"
             element={
-              isAuth ? (
-                <Navigate to="/chat" />
-              ) : (
-                <Login
-                  setUser={setUser}
-                  setSecret={setSecret}
-                />
-              )
+              <Navigate to="/chat" />
+              // isAuth ? (
+              //   <Navigate to="/chat" />
+              // ) : (
+              //   <Login
+              //     setUser={setUser}
+              //     setSecret={setSecret}
+              //   />
+              // )
             }
           />
           <Route
             path="/chat"
             element={
-              isAuth ? (
-                <Chat
+              <Chat
                   user={user}
                   secret={secret}
                 />
-              ) : (
-                <Navigate to="/" />
-              )
+              // isAuth ? (
+              //   <Chat
+              //     user={user}
+              //     secret={secret}
+              //   />
+              // ) : (
+              //   <Navigate to="/" />
+              // )
             }
           />
         </Routes>
